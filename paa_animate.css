@@ -60,6 +60,7 @@ div#bat {
     top: 100px;
     left: -50px;
     background: url(paa_bat.png) left center/ cover no-repeat;
+    animation: playSprite 2s steps(39) infinite, flyRight 3.5s linear infinite;
 }
 
 div#butterfly {
@@ -68,6 +69,7 @@ div#butterfly {
     top: 60px;
     left: -50px;
     background: url(paa_bfly.png) left center/ cover no-repeat;
+    animation: playSprite 1s 3s steps(33) infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
 
 div#fox {
@@ -111,6 +113,6 @@ div#fox {
     }
 }
 
-@keyframes
+
 /* Sprites achieve the animation effect by changing the background image in n – 1 discrete steps, where n is the number of frames in the sprite. Apply the playSprite animation to the fox div element after a 4-second delay over a time interval of 3.5 seconds and a steps value of 27. Set the animation to loop infinitely.
 17. Apply the playSprite animation to the bat div element over a 2-second interval with 39 steps. Apply the flyRight animation over an 8-second interval with linear timing. Set both animations to loop infinitel */
