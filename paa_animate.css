@@ -7,7 +7,7 @@
    Author: Maria De Jesus Rizo
    Date:   1.29.19
 
-   Filename: 
+   Filename: paa_animate.css
    
    Sprite animation is created using the paa_bat.png, 
    paa_bfly.png, and paa_fox.png image files.
@@ -20,16 +20,20 @@
 
 
 /* Transition Effects */
+/* Styles within this sections will affect the transition of elements onto the HTMl page. */
+/* The selecetor below states that the a element nested within the nav element with an id of gameLinks will be affected. The positions property states that the element's position will be relative to other elements on the page. The color property states that text within this sections will be colored white. The transition property states that the color of the element will transition in about 0.5 seconds.  */
 nav#gameLinks a {
     position: relative;
     color: white;
     transition: color 0.5s;
 }
 
+/* The selector below states that the a element nested within the nav element with an id of gameLinks will be affected when being hovered over by the user. The transition property in the previous selector will case the text to transition from white to orange when hovered over. */
 nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
 
+/* The selector below states that the a element nested within the nav element with an id of gameLinks will be affected when in the state of after. The content inserts an empty string into the page. The position property states that the elements position will be absolute in relation to the other elements on the page. The top property provided the element with how far it will be moved from its position in the absolute container. The left element does the same, only moving the element to the left. The width property states that the element will have a width of 0% of its container. The height property states that the element will have a height of 8px. The background linear gradient gives the element a gradient of the specified colors going to the right. The border radius property rounds the corners of the element. The opacity property states t=how transparent the element will be.  */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -43,6 +47,7 @@ nav#gameLinks a::after {
     transition: opacity 0.5s, width 0.5s;
 }
 
+/* The selector below states that styles will be applied to the a element nested within the nav element with an id of gameLinks that is in the state of both hover and after. This selector makes the bar appear under the text when hovered over.  */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%
@@ -50,10 +55,13 @@ nav#gameLinks a:hover::after {
 
 
 /* Sprite Styles */
+/* Styles within this section will affect the sprites displayed on the page. */
+/* The sleector below states that the div eement with a class of sprite will be affected. */
 div.sprite {
     position: absolute;
 }
 
+/* The selector below states that the div element with an id of bat will be affected. The background element states what and where the image will be placed on the page, along with how it will be. The animation element animates the sprites movement on the page and uses the keyframe properties listed below to animate the image. */
 div#bat {
     width: 40px;
     height: 50px;
@@ -63,6 +71,7 @@ div#bat {
     animation: playSprite 2s steps(39) infinite, flyRight 3.5s linear infinite;
 }
 
+/* The slecteor states tht styles listed will be applied to the div element with an id of butterfly. The cubic besier within the animation element states how the element will move on the page.  */
 div#butterfly {
     width: 35px;
     height: 35px;
@@ -72,6 +81,7 @@ div#butterfly {
     animation: playSprite 1s 3s steps(33) infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
 
+/* The selector below states that styles will affect the div element with an id of fox.  */
 div#fox {
     width: 280px;
     height: 260px;
@@ -81,15 +91,14 @@ div#fox {
     animation: playSprite 3.5s 4s steps(27) infinite;
 }
 
-
-
 /* Animation Styles */
+/* Styles within this section will affect how the sprites are animated on the page. The keyframes selector allows for an element to be animated on the page. The background position property states where the sprite will be placed. The percentage within the keyframe is when in the animation the styles should be applied.  */
 @keyframes playSprite {
     100% {
         background-position: right center;
     }
 }
-
+/* The comment above applied to this section as well, the only difference being that the sprite is being affected at more times.  */
 @keyframes flyRight {
     25% {
         top: 150px;
@@ -112,7 +121,3 @@ div#fox {
         left: 100%
     }
 }
-
-
-/* Sprites achieve the animation effect by changing the background image in n – 1 discrete steps, where n is the number of frames in the sprite. Apply the playSprite animation to the fox div element after a 4-second delay over a time interval of 3.5 seconds and a steps value of 27. Set the animation to loop infinitely.
-17. Apply the playSprite animation to the bat div element over a 2-second interval with 39 steps. Apply the flyRight animation over an 8-second interval with linear timing. Set both animations to loop infinitel */
